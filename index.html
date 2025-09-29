@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacts Manager</title>
+  <meta name="description" content="A simple contacts manager app where you can register, log in, and manage your personal contacts easily.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preconnect for faster Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Styles -->
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Auth View (default landing) -->
+  <main id="authView">
+    <!-- Login Section -->
+    <section class="card" id="loginSection">
+      <h2>Login</h2>
+      <form id="loginForm" class="flex">
+        <input type="text" id="login_login" placeholder="Username" autocomplete="username" required>
+        <input type="password" id="login_password" placeholder="Password" autocomplete="current-password" required>
+        <button type="submit" class="buttons">Login</button>
+      </form>
+      <div class="alt-action">
+        <button id="showRegister" type="button" class="link-btn">Create an account</button>
+      </div>
+      <div id="loginMessage" class="msg"></div>
+    </section>
+
+    <!-- Register Section -->
+    <section class="card hidden" id="registerSection">
+      <h2>Make A New Account</h2>
+      <form id="registerForm" class="flex">
+        <div class="row-2 grid">
+          <input type="text" id="reg_first" placeholder="First Name" required>
+          <input type="text" id="reg_last" placeholder="Last Name" required>
+        </div>
+        <input type="text" id="reg_login" placeholder="Username" autocomplete="username" required>
+        <input type="password" id="reg_password" placeholder="Password" autocomplete="new-password" required>
+        <button type="submit" class="buttons">Register</button>
+      </form>
+      <div class="alt-action">
+        <button id="showLogin" type="button" class="link-btn">Already have an account?</button>
+      </div>
+      <div id="registerMessage" class="msg"></div>
+    </section>
+  </main>
+
+  <!-- App View (hidden until login) -->
+  <main id="appView" class="hidden">
+    <header id="appHeader" class="flex">
+      <div id="userGreeting"></div>
+      <button id="logoutBtn" class="buttons small">Logout</button>
+    </header>
+
+    <!-- Add Contact -->
+    <section class="card" id="addContactCard">
+      <h2>Add Contact</h2>
+      <form id="addContactForm" class="flex">
+        <div class="row-2 grid">
+          <input type="text" id="add_first" placeholder="First Name" required>
+          <input type="text" id="add_last" placeholder="Last Name" required>
+        </div>
+        <div class="row-2 grid">
+          <input type="tel" id="add_phone" placeholder="Phone" required>
+          <input type="email" id="add_email" placeholder="Email" required>
+        </div>
+        <button type="submit" class="buttons">Add Contact</button>
+      </form>
+      <div id="addMessage" class="msg"></div>
+    </section>
+
+    <!-- Search Contacts -->
+    <section class="card" id="searchCard">
+      <h2>Contacts</h2>
+      <input id="searchInput" type="text" placeholder="Search (name, phone, email)">
+      <div id="searchMessage" class="msg"></div>
+
+      <div class="table-wrapper">
+        <table id="contactsTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filled dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="emptyState" class="empty hidden">No contacts found.</div>
+    </section>
+  </main>
+
+  <script src="/js/app.js" defer></script>
+
+
+  <div id="hl-aria-live-message-container" aria-live="polite" class="visually-hidden"></div>
+  <div id="hl-aria-live-alert-container" role="alert" aria-live="assertive" class="visually-hidden"></div>
+
+</body>
+</html>

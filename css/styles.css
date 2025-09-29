@@ -1,0 +1,367 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #6a11cb, #b91372);
+}
+
+.hidden { display: none !important; }
+
+.card {
+  background: #fff; /* keep content readable */
+  margin: 1.25rem auto;
+  padding: 1.5rem 1.75rem 2rem;
+  width: min(900px, 92%);
+  border-radius: 14px;
+  border: 2px solid #7f5af0;  /* purple border */
+  box-shadow: 0 6px 18px -8px rgba(127, 90, 240, 0.4);
+}
+
+
+.card:hover {
+  box-shadow:0 12px 30px -12px rgba(0,0,0,.38),
+             0 4px 10px -3px rgba(0,0,0,.22);
+}
+
+h1 {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  margin: 1.2rem 0 0.5rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  letter-spacing: .5px;
+  text-align: center;
+}
+
+form {
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+}
+
+.row-2 {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:.75rem;
+}
+
+input[type=text],
+input[type=password],
+input[type=tel],
+input[type=email] {
+  font-size:1rem;
+  padding:.85rem 1rem;
+  border-radius:8px;
+  border:2px solid #707070;
+  outline:none;
+  background:#fff;
+  box-shadow:0 2px 5px -2px rgba(0,0,0,.15);
+  transition:.18s border-color, .18s box-shadow, .18s transform;
+}
+
+/* focus ring */
+input:focus {
+  border-color:#0044ff;
+  box-shadow:0 0 0 3px rgba(0,68,255,.25);
+}
+
+/* Buttons */
+.buttons {
+  font-size: 1.2rem;
+  border-radius: 25px;
+  width: 100%;
+  margin: 0.5rem 0;
+  font-family: 'Ubuntu', sans-serif;
+  cursor: pointer;
+  padding: .9rem 1rem;
+  background: #7f5af0;   /* SAME purple as background */
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px -6px rgba(127, 90, 240, .45); /* subtle purple glow */
+  transition: .2s background, .2s transform, .25s box-shadow;
+}
+
+.buttons:hover {
+  background: #6a11cb; /* deeper purple for hover */
+  box-shadow: 0 5px 14px -5px rgba(106, 17, 203, .5);
+}
+
+
+
+.buttons:active {
+  transform:scale(.965);
+  box-shadow:0 3px 9px -4px rgba(0,72,255,.38);
+}
+
+.buttons.small {
+  width:auto;
+  margin:0;
+  font-size:1rem;
+  border-radius:10px;
+}
+
+/* Link buttons */
+.link-btn {
+  background:none;
+  border:none;
+  color:#0032b8;
+  cursor:pointer;
+  font-size:.95rem;
+  padding:0;
+  text-decoration:underline;
+}
+
+.link-btn:hover { color:#001f66; }
+
+/* Messages */
+.msg {
+  min-height:1.1rem;
+  font-size:.9rem;
+  margin-top:.35rem;
+  color:#95060a;
+  word-break:break-word;
+}
+
+.msg.success { color:#0b640d; }
+
+/* Header with greeting + logout */
+#appHeader {
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:1rem;
+  width:min(900px, 92%);
+  margin:0.75rem auto 0;
+  position:relative;
+}
+
+#userGreeting {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:1.05rem;
+  font-weight:600;
+  color:#000;
+  text-align:center;
+  pointer-events:none;
+}
+
+/* Search input */
+#searchInput {
+  width:100%;
+  margin:.25rem 0 1rem;
+  font-size:1rem;
+  box-sizing: border-box;
+}
+
+/* Contacts table */
+.table-wrapper {
+  overflow:auto;
+  border:2px solid #707070;
+  border-radius:10px;
+  background:#fff;
+}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:.95rem;
+}
+
+thead {
+  background:#6a11cb;
+  color:#fff;
+  box-shadow:0 2px 6px -2px rgba(0,0,0,.25);
+}
+
+th, td {
+  padding:.65rem .75rem;
+  text-align:left;
+  border-bottom:1px solid #d0d0d0;
+  vertical-align:middle;
+}
+
+tbody tr:last-child td { border-bottom:none; }
+
+tbody tr:hover { background:#f4f7ff; }
+
+.action-btn {
+  background:#d7263d;
+  border:none;
+  color:#fff;
+  padding:.45rem .7rem;
+  border-radius:6px;
+  font-size:.75rem;
+  cursor:pointer;
+  box-shadow:0 2px 6px -2px rgba(215,38,61,.55);
+  transition:.18s background, .18s transform, .25s box-shadow;
+}
+
+.action-btn:hover {
+  background:#a01122;
+  box-shadow:0 4px 10px -3px rgba(215,38,61,.6);
+}
+
+.action-btn:active { transform:translateY(1px); }
+
+.edit-btn {
+  background:#2d89ef; /* nice blue */
+  border:none;
+  color:#fff;
+  padding:.45rem .7rem;
+  border-radius:6px;
+  font-size:.75rem;
+  cursor:pointer;
+  box-shadow:0 2px 6px -2px rgba(45,137,239,.55);
+  transition:.18s background, .18s transform, .25s box-shadow;
+}
+
+.edit-btn:hover {
+  background:#1b5dab;
+  box-shadow:0 4px 10px -3px rgba(45,137,239,.6);
+}
+
+.edit-btn:active { transform:translateY(1px); }
+
+
+
+.empty {
+  text-align:center;
+  font-size:.95rem;
+  margin-top:1rem;
+  color:#303030;
+}
+
+/* Auth view layout */
+#authView {
+  min-height:calc(100vh - 4rem);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:2rem 0 2.5rem;
+}
+
+#authView .card { width:min(780px, 92%); }
+
+#authView .alt-action { text-align:center; }
+#authView .alt-action .link-btn { display:inline-block; }
+
+@media (min-width:900px){
+  #authView .card { width:min(760px, 80%); }
+}
+
+@media (max-width:680px){
+  #authView { padding-top:1.5rem; }
+  .buttons { border-radius:18px; }
+}
+
+@media (max-width:500px){
+  #authView .card,
+  .card {
+    width:min(360px, 88%);
+    padding: 2rem .4rem 2.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .row-2 { grid-template-columns:1fr; }
+  .hide-sm { display:none; }
+  #appHeader { flex-direction:column; align-items:flex-start; }
+}
+
+/* Dark mode */ 
+  @media (prefers-color-scheme: dark) {
+  .card { background:#2c2c2c; color:#f5f5f5; }
+  .empty { color: #f5f5f5; }
+  input { background:#fff; }
+  table { background:#fafafa; }
+  th { background:#6a11cb; }
+  .table-wrapper { background:#fafafa; color: #000}
+  .link-btn { color: #4da6ff }
+  .link-btn:hover { color: #006cd8 }
+  #userGreeting { color: #f5f5f5; }
+  .msg { color: #ff6b6b }
+  .msg.success { color: #3ddb3d; }
+}
+
+
+#authView {
+  background: linear-gradient(135deg, #6a11cb, #b91372);
+  min-height: 100vh;
+  width: 100%;
+}
+
+#appView {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #6a11cb, #b91372);
+}
+
+
+/* Save button */
+.save-btn {
+  background: #4CAF50; /* green */
+  border: none;
+  color: #fff;
+  padding: .45rem .7rem;
+  border-radius: 6px;
+  font-size: .75rem;
+  cursor: pointer;
+  margin-right: .3rem;
+  box-shadow: 0 2px 6px -2px rgba(76, 175, 80, .55);
+  transition: .18s background, .18s transform, .25s box-shadow;
+}
+
+.save-btn:hover {
+  background: #388E3C;
+  box-shadow: 0 4px 10px -3px rgba(56, 142, 60, .6);
+}
+
+.save-btn:active {
+  transform: translateY(1px);
+}
+
+/* Cancel button */
+.cancel-btn {
+  background: #999;
+  border: none;
+  color: #fff;
+  padding: .45rem .7rem;
+  border-radius: 6px;
+  font-size: .75rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px -2px rgba(150, 150, 150, .5);
+  transition: .18s background, .18s transform, .25s box-shadow;
+}
+
+.cancel-btn:hover {
+  background: #666;
+  box-shadow: 0 4px 10px -3px rgba(100, 100, 100, .6);
+}
+
+.cancel-btn:active {
+  transform: translateY(1px);
+}
+
+/* Group action buttons side by side */
+.action-buttons {
+  display: flex;
+  gap: 0.4rem; /* space between buttons */
+  flex-wrap: nowrap;
+}
+
+/* Prevent buttons from squishing */
+.action-buttons button {
+  flex: 0 0 auto;
+}
+
+/* Optional: stack buttons on mobile */
+@media (max-width: 600px) {
+  .action-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
