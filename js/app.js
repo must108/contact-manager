@@ -129,7 +129,7 @@
   function logout(){
     localStorage.removeItem('user');
     currentUser = null;
-    showAuth('login'); // go straight back to login
+    showAuth('login');
     loginForm.reset();
     registerForm.reset();
     addContactForm.reset();
@@ -233,7 +233,7 @@
 
   searchInput.addEventListener('input', debounceSearch);
 
-  // ✅ Contact table event delegation
+  // Contact table event 
   tbody.addEventListener('click', e=>{
     // Delete
     if(e.target.closest('button.action-btn')){
@@ -310,7 +310,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     restoreUser();
     if(!currentUser){
-      showAuth('login'); // go directly to login page
+      showAuth('login');
     }
   });
 })();
