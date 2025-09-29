@@ -8,12 +8,12 @@ html, body {
 .hidden { display: none !important; }
 
 .card {
-  background: #fff; /* keep content readable */
+  background: #fff; 
   margin: 1.25rem auto;
   padding: 1.5rem 1.75rem 2rem;
   width: min(900px, 92%);
   border-radius: 14px;
-  border: 2px solid #7f5af0;  /* purple border */
+  border: 2px solid #7f5af0; 
   box-shadow: 0 6px 18px -8px rgba(127, 90, 240, 0.4);
 }
 
@@ -76,7 +76,7 @@ input:focus {
   font-family: 'Ubuntu', sans-serif;
   cursor: pointer;
   padding: .9rem 1rem;
-  background: #7f5af0;   /* SAME purple as background */
+  background: #7f5af0;  
   color: #fff;
   border: none;
   box-shadow: 0 4px 12px -6px rgba(127, 90, 240, .45); /* subtle purple glow */
@@ -207,7 +207,7 @@ tbody tr:hover { background:#f4f7ff; }
 .action-btn:active { transform:translateY(1px); }
 
 .edit-btn {
-  background:#2d89ef; /* nice blue */
+  background:#2d89ef;
   border:none;
   color:#fff;
   padding:.45rem .7rem;
@@ -303,7 +303,7 @@ tbody tr:hover { background:#f4f7ff; }
 
 /* Save button */
 .save-btn {
-  background: #4CAF50; /* green */
+  background: #4CAF50;
   border: none;
   color: #fff;
   padding: .45rem .7rem;
@@ -349,7 +349,7 @@ tbody tr:hover { background:#f4f7ff; }
 /* Group action buttons side by side */
 .action-buttons {
   display: flex;
-  gap: 0.4rem; /* space between buttons */
+  gap: 0.4rem; 
   flex-wrap: nowrap;
 }
 
@@ -358,7 +358,7 @@ tbody tr:hover { background:#f4f7ff; }
   flex: 0 0 auto;
 }
 
-/* Optional: stack buttons on mobile */
+/* stack buttons on mobile */
 @media (max-width: 600px) {
   .action-buttons {
     flex-direction: column;
