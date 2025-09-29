@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";   // Because PHP + MySQL are on the same server
-$username   = "root";        // Or better: the new MySQL user you create
-$password   = "MalldoOr0524gm";  // Your MySQL password
-$dbname     = "COP4331";     // Your database name
+$servername = "localhost";   
+$username   = "root";        
+$password   = "MalldoOr0524gm";  // MySQL password
+$dbname     = "COP4331";     // database name
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
